@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登录</title>
+    <style>
+        body {
+            background: url(/beijing.jpg) top left;
+            background-size: 100%;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        #div-title {
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        h3 {
+            font-size: 40px;
+            font-family: "微软雅黑";
+        }
+
+        #form-border {
+            background-color: rgba(188, 176, 212, 0.6);
+            width: 500px;
+            height: 600px;
+            position: absolute;
+            margin: auto;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+
+        #img-control {
+            margin-top: 65px;
+        }
+
+        #login-img {
+            margin-left: 30px;
+            float: left;
+        }
+
+        .form-input {
+            width: 200px;
+            height: 25px;
+            padding-left: 5px;
+            border-radius: 5px;
+        }
+
+        .form-label {
+            margin-left: 30px;
+        }
+
+        #password {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .form-button {
+            width: 70px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 70px;
+            font-size: 18px;
+            font-family: 宋体;
+        }
+
+        .form-reset {
+            width: 70px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 18px;
+            font-family: 宋体;
+        }
+
+        #register-img {
+            float: right;
+            margin-right: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="form-border">
+        <div id="div-title">
+            <h3>欢迎登录</h3>
+        </div>
+        <form action='/login' method="post" style="text-align: center;">
+            <!-- <div id="img-control">
+                <img src="/logo.png" id="login-img">
+            </div> -->
+            <div style="margin-bottom: 20px;">
+                <label class="form-label" for="account">账&nbsp;号</label>
+                <input id="account" class="form-input" type="text" name="account" placeholder="请输入账号" required="required">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label class="form-label" for="password">密&nbsp;码</label>
+                <input id="password" class="form-input" type="password" name="password" placeholder="请输入密码" required="required">
+            </div>
+            <input id="login" class="form-button" type="submit" value="登录">
+        </form>
+        <script>
+            function handleLogin() {
+                alert("用户名或密码错误!");
+            }
+            window.onload = handleLogin;
+        </script>
+    </div>
+</body>
+
+</html>

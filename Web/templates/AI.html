@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>OLLAMA 流式输出示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #response {
+            white-space: pre-wrap; /* 保留换行符 */
+        }
+    </style>
+</head>
+<body>
+    <div id="response"></div>
+
+    <script>
+        async function getResponse() {
+            const prompt = "生成";
+            const responseElement = document.getElementById('response');
+            responseElement.innerText = "开始生成回答...\n";
+
+            try {
+                const response = await fetch('/stream_response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ prompt })
+                });
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder('utf-8');
+                let receivedLength = 0; // 已接收的数据长度
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) {
+                        break;
+                    }
+                    receivedLength += value.length;
+                    const chunk = decoder.decode(value, { stream: true });
+                    responseElement.innerText += chunk;
+                }
+
+            } catch (error) {
+                responseElement.innerText += `\n发生错误: ${error}`;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("");
+            getResponse()
+        });
+    </script>
+</body>
+</html>

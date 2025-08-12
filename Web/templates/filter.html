@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>日志查询</title>
+    <style>
+        /* 在这里嵌入CSS样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        body {
+            background-color: #4B7C99;
+        }
+
+        #bigbox {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #banner {
+            width: 1000px;
+            font-size: 0px;
+        }
+
+        #banner img {
+            width: 1000px;
+        }
+
+        nav {
+            background-color: #CCD0D9;
+            width: 1000px;
+            height: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            line-height: 60px;
+            margin-left: 50px;
+            margin-right: 50px;
+            color: #020C16;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1a9be6;
+        }
+
+        .dangqian {
+            color: #1a9be6;
+
+        }
+
+        #main {
+            height: auto;
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #86aacb;
+        }
+
+        #main_left {
+            width: 300px;
+            display: inline-block;
+            background-color: #86aacb;
+            vertical-align: top;
+            /* 可选，用于对齐顶部 */
+        }
+
+
+        h2 {
+            box-sizing: border-box;
+            padding-left: 10px;
+            font-size: 20px;
+            line-height: 30px;
+            background-color: #03151F;
+            color: #CCD0D9;
+        }
+
+        #main_left img {
+            width: 300px;
+        }
+
+        #main_left p {
+            margin-left: 10px;
+            line-height: 40px;
+        }
+
+        #main_left span {
+            font-weight: bold;
+        }
+
+        #main_right {
+            position: relative;
+            width: 680px;
+            margin-left: 20px;
+            display: inline-block;
+            height: 200px;
+        }
+
+        #main_right img {
+            position: absolute;
+            width: 260px;
+            right: 0px;
+            top: 30px;
+        }
+
+        #main_right p {
+            width: 400px;
+            display: inline-block;
+            margin-left: 10px;
+            text-indent: 32px;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+
+        #luxing {
+            background-color: #86aacb;
+            width: 1000px;
+        }
+
+        #luxing div {
+            font-size: 0px;
+        }
+
+        #picture {
+            font-size: 0px;
+            display: inline-block;
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-top: 25px;
+        }
+
+        #picture img {
+            width: 200px;
+        }
+
+        #picture p {
+            font-size: 16px;
+            text-align: center;
+            line-height: 60px;
+
+        }
+
+        footer {
+            line-height: 60px;
+            font-size: 14px;
+            text-align: center;
+            background-color: #CCD0D9;
+        }
+
+        #main_right ul li {
+            width: 660px;
+            margin-left: 10px;
+            font-size: 12px;
+            margin-top: 10px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 10px;
+        }
+
+        #main_right ul li span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #liuyan {
+            width: 660px;
+            margin-left: 10px;
+            margin: 20px;
+        }
+
+        #liuyan span {
+            display: inline-block;
+            width: 80px;
+            line-height: 40px;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            margin-left: 80px;
+        }
+
+        table {
+            margin: 0 auto;
+            /* 水平居中 */
+            border-collapse: collapse;
+            /* 可选，用于合并表格边框 */
+        }
+
+        td,
+        th {
+            border: 1px solid #ccc;
+            /* 可选，用于添加表格边框 */
+            padding: 8px;
+            /* 可选，用于添加单元格内边距 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bigbox">
+        <div id="banner">
+            <img src="wbg.png" alt="wbg.png">
+        </div>
+        <nav>
+            <a href="/index">首页</a>
+            <a href="/borrow">借器材</a>
+            <a href="/return">还器材</a>
+            <a href="/analysis">器材使用情况AI分析</a>
+            <a href="/help">使用帮助</a>
+            <a href="/logout">登出</a>
+        </nav>
+        <div id="main">
+            <div id="bigbox">
+                <h2>日志查询</h2>
+                <form method="post">
+                    <label for="name">姓名:</label>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="class">班级:</label>
+                    <input type="text" id="class" name="class"><br>
+                    <label for="code">器材编号:</label>
+                    <input type="text" id="code" name="code"><br>
+                    <label for="date">日期:</label>
+                    <input type="date" id="date" name="date"><br>
+                    <input type="submit" value="查询">
+                </form>
+                {% if results %}
+                <h2>查询结果</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>姓名</th>
+                            <th>班级</th>
+                            <th>器材编号</th>
+                            <th>时间</th>
+                            <th>状态</th>
+                            <th>归还时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in results %}
+                        <tr>
+                            <td>{{ result[0] }}</td>
+                            <td>{{ result[1] }}</td>
+                            <td>{{ result[2] }}</td>
+                            <td>{{ result[3] }}</td>
+                            <td>{{ result[4] }}</td>
+                            <td>{{ result[5] }}</td>
+                            <td>{{ result[6] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+            </div>
+</body>
+
+</html>

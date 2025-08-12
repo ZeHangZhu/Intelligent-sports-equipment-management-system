@@ -1,0 +1,6 @@
+Flask==3.1.0
+markdown2==2.4.13
+ollama==0.4.7
+Pillow==11.1.0
+pyecharts==2.0.8
+tkhtmlview==0.3.1

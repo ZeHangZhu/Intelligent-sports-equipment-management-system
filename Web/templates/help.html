@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体育器材管理系统</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        /* 在这里嵌入CSS样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        body {
+            background-color: #4B7C99;
+        }
+
+        #bigbox {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #banner {
+            width: 1000px;
+            font-size: 0px;
+        }
+
+        #banner img {
+            width: 1000px;
+        }
+
+        nav {
+            background-color: #CCD0D9;
+            width: 1000px;
+            height: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            line-height: 60px;
+            margin-left: 50px;
+            margin-right: 50px;
+            color: #020C16;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1a9be6;
+        }
+
+        .dangqian {
+            color: #1a9be6;
+
+        }
+
+        #main {
+            height: auto;
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #86aacb;
+        }
+
+        #main_left {
+            width: 300px;
+            display: inline-block;
+            background-color: #86aacb;
+            vertical-align: top;
+            /* 可选，用于对齐顶部 */
+        }
+
+
+        h2 {
+            box-sizing: border-box;
+            padding-left: 10px;
+            font-size: 20px;
+            line-height: 30px;
+            background-color: #03151F;
+            color: #CCD0D9;
+        }
+
+        #main_left img {
+            width: 300px;
+        }
+
+        #main_left p {
+            margin-left: 10px;
+            line-height: 40px;
+        }
+
+        #main_left span {
+            font-weight: bold;
+        }
+
+        #main_right {
+            position: relative;
+            width: 680px;
+            margin-left: 20px;
+            display: inline-block;
+            height: 200px;
+        }
+
+        #main_right img {
+            position: absolute;
+            width: 260px;
+            right: 0px;
+            top: 30px;
+        }
+
+        #main_right p {
+            width: 400px;
+            display: inline-block;
+            margin-left: 10px;
+            text-indent: 32px;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+
+        #luxing {
+            background-color: #86aacb;
+            width: 1000px;
+        }
+
+        #luxing div {
+            font-size: 0px;
+        }
+
+        #picture {
+            font-size: 0px;
+            display: inline-block;
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-top: 25px;
+        }
+
+        #picture img {
+            width: 200px;
+        }
+
+        #picture p {
+            font-size: 16px;
+            text-align: center;
+            line-height: 60px;
+
+        }
+
+        footer {
+            line-height: 60px;
+            font-size: 14px;
+            text-align: center;
+            background-color: #CCD0D9;
+        }
+
+        #main_right ul li {
+            width: 660px;
+            margin-left: 10px;
+            font-size: 12px;
+            margin-top: 10px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 10px;
+        }
+
+        #main_right ul li span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #liuyan {
+            width: 660px;
+            margin-left: 10px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        #liuyan span {
+            display: inline-block;
+            width: 80px;
+            line-height: 40px;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            margin-left: 80px;
+        }
+
+        #liuyan {
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        /* 添加输入框样式 */
+        input[type="text"] {
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bigbox">
+        <div id="banner">
+            <img src="wbg.png" alt="wbg.png">
+        </div>
+        <nav>
+            <a href="/index">首页</a>
+            <a href="/borrow">借器材</a>
+            <a href="/return">还器材</a>
+            <a href="/analysis">器材使用情况AI分析</a>
+            <a class="dangqian" href="">使用帮助</a>
+            <a href="/logout">登出</a>
+        </nav>
+        <div id="main">
+            <div id="main">
+                <h2>查询特定记录</h2>
+                <h3>操作步骤</h3>
+                <p>在主界面点击筛选</p>
+                <p>在输入框中指定筛选条件,如要查询的姓名,班级,或特定的器材编号,也可以根据时间筛选指定日期的记录</p>
+                <p>点击查询即可查询符合的记录</p>
+                </p>
+
+                <h2>导出Excel表格</h2>
+                <p>在主界面点击导出Excel表格即可下载记录</p>
+                </p>
+
+                <h2>借器材</h2>
+                <p>
+                <h3>注意事项</h3>
+                <p>每一件器材都有属于自己的唯一的编号,在借器材时请输入正确的器材编号,若输入错误则无法登记成功,请重新输入</p>
+                <br>
+                <h3>操作步骤</h3>
+                <p>1.在主界面点击借器材</p>
+                <p>2.在输入框中输入器材编号(或扫描器材上的条形码/二维码/NFC标签)登记借用人班级和姓名</p>
+                <p>3.点击确定后若显示登记成功则表明登记成功 </p>
+                </p>
+
+                <h2>还器材</h2>
+                <h3>注意事项</h3>
+                <p>每一件器材都有属于自己的唯一的编号,在借器材时请输入正确的器材编号,若输入错误则无法登记成功,请重新输入</p>
+                <br>
+                <h3>操作步骤</h3>
+                <p>1.在主界面点击借器材</p>
+                <p>2.输入器材编号(或扫描器材上的条形码/二维码/NFC标签)</p>
+                <p>3.点击确定后即可归还</p>
+
+                <h2>增加体育器材</h2>
+                <p>网页版不支持此操作</p>
+                <p>
+
+                    可以在搭建了服务器的电脑上运行SEC.py,在菜单栏分别选择"体育器材 -> 增加体育器材",输入器材种类后即可添加
+                </p>
+
+                <h2>删除体育器材</h2>
+                <p>网页版不支持此操作</p>
+                <p>
+                    可以在搭建了服务器的电脑上运行SEC.py,在菜单栏分别选择"体育器材 -> 删除体育器材",输入器材编号后即可删除
+                </p>
+
+                <h2>器材使用情况分析</h2>
+                <h3>注意事项</h3>
+                <p>AI生成的内容需等待一定时间,具体取决于CPU/GUP性能和数据量</p>
+                <br>
+
+                <p>点击器材使用情况即可自动生成一份网页报告,报告中包含了所有器材的使用情况</p>
+                <p>点击各个图例即可在图标种隐藏此项数据</p>
+
+                <h2>修改AI服务器地址</h2>
+                <p>网页版不支持此操作</p>
+                <p>
+                    可以在搭建了服务器的电脑上运行SEC.py,在菜单栏分别选择"配置",在输入框中输入服务器API地址和模型名称后即可修改</p>
+            </div>
+            <footer>
+                <p>版权所有©</p>
+            </footer>
+</body>
+
+</html>

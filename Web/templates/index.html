@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体育器材管理系统</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        /* 在这里嵌入CSS样式 */
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        body {
+            background-color: #4B7C99;
+        }
+
+        #bigbox {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        #banner {
+            width: 1000px;
+            font-size: 0px;
+        }
+
+        #banner img {
+            width: 1000px;
+        }
+
+        nav {
+            background-color: #CCD0D9;
+            width: 1000px;
+            height: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            line-height: 60px;
+            margin-left: 50px;
+            margin-right: 50px;
+            color: #020C16;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1a9be6;
+        }
+
+        .dangqian {
+            color: #1a9be6;
+
+        }
+
+        #main {
+            height: auto;
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #86aacb;
+        }
+
+        #main_left {
+            width: 300px;
+            display: inline-block;
+            background-color: #86aacb;
+            vertical-align: top;
+            /* 可选，用于对齐顶部 */
+        }
+
+
+        h2 {
+            box-sizing: border-box;
+            padding-left: 10px;
+            font-size: 20px;
+            line-height: 30px;
+            background-color: #03151F;
+            color: #CCD0D9;
+        }
+
+        #main_left img {
+            width: 300px;
+        }
+
+        #main_left p {
+            margin-left: 10px;
+            line-height: 40px;
+        }
+
+        #main_left span {
+            font-weight: bold;
+        }
+
+        #main_right {
+            position: relative;
+            width: 680px;
+            margin-left: 20px;
+            display: inline-block;
+            height: 200px;
+        }
+
+        #main_right img {
+            position: absolute;
+            width: 260px;
+            right: 0px;
+            top: 30px;
+        }
+
+        #main_right p {
+            width: 400px;
+            display: inline-block;
+            margin-left: 10px;
+            text-indent: 32px;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+
+        #luxing {
+            background-color: #86aacb;
+            width: 1000px;
+        }
+
+        #luxing div {
+            font-size: 0px;
+        }
+
+        #picture {
+            font-size: 0px;
+            display: inline-block;
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-top: 25px;
+        }
+
+        #picture img {
+            width: 200px;
+        }
+
+        #picture p {
+            font-size: 16px;
+            text-align: center;
+            line-height: 60px;
+
+        }
+
+        footer {
+            line-height: 60px;
+            font-size: 14px;
+            text-align: center;
+            background-color: #CCD0D9;
+        }
+
+        #main_right ul li {
+            width: 660px;
+            margin-left: 10px;
+            font-size: 12px;
+            margin-top: 10px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 10px;
+        }
+
+        #main_right ul li span {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #liuyan {
+            width: 660px;
+            margin-left: 10px;
+            margin: 20px;
+        }
+
+        #liuyan span {
+            display: inline-block;
+            width: 80px;
+            line-height: 40px;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            margin-left: 80px;
+        }
+
+        table {
+            margin: 0 auto;
+            /* 水平居中 */
+            border-collapse: collapse;
+            /* 可选，用于合并表格边框 */
+        }
+
+        td,
+        th {
+            border: 1px solid #ccc;
+            /* 可选，用于添加表格边框 */
+            padding: 8px;
+            /* 可选，用于添加单元格内边距 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bigbox">
+        <div id="banner">
+            <img src="wbg.png" alt="wbg.png">
+        </div>
+        <nav>
+            <a class="dangqian" href="">首页</a>
+            <a href="/borrow">借器材</a>
+            <a href="/return">还器材</a>
+            <a href="/analysis">器材使用情况AI分析</a>
+            <a href="/help">使用帮助</a>
+            <a href="/logout">登出</a>
+        </nav>
+        <div id="main">
+
+
+            <h2>器材管理流程</h2>
+            <li>
+                <p>（一）器材登记与入库</p>
+                <p>新购置的体育器材应及时进行登记，包括器材名称、型号。
+                    将器材存放至指定的器材室，妥善保管，防止受潮、损坏或丢失。</p>
+            </li>
+            <li>
+                <p>（二）器材借用与归还</p>
+                <p>
+                    借用器材时，应在借用注明借用器材的名称申请人姓名、部门等信息。
+                    借用人员在借用器材前应先到管理员处进行申请，管理员审批后才能借出器材。</p>
+                <p>归还器材时，应注明归还器材的名称、规格、数量、归还时间、归还地点等信息。管理员审批后才能归还器材。归还后，应在器材管理系统中记录归还信息，并对器材进行检查，确认器材完好无损。</p>
+            </li>
+            <li>
+                <p>（二）借用流程</p>
+                <p>在向管理员收到申请后在系统中登记姓名班级和器材编号,在系统登记后方可接借用</p>
+            </li>
+            <li>
+                <p>（三）归还流程</p>
+                <p>1. 检查器材</p>
+                <p>借用人员在规定时间内将所借器材归还至器材室。管理员应当场对归还的器材进行检查，查看器材是否完好无损，数量是否准确。如发现器材有损坏或丢失，应按照相关规定进行处理。</p>
+                <p>2. 确认归还</p>
+                <p>经检查确认器材无问题后，管理员在管理系统中记录归还信息。如器材有损坏或丢失，应在申请表备注栏中说明情况。</p>
+            </li>
+            </li>
+
+        </div>
+        <div id="main">
+            <h2 style="display: flex; justify-content: space-between; align-items: center;">
+                <span>近期记录查询</span>
+                <span>
+                    <a href="/filter">筛选</a>
+                    |
+                    <a href="/excel">导出Excel</a>
+                </span>
+            </h2>
+            <table border="1">
+                <tr>
+                    <th>姓名</th>
+                    <th>班级</th>
+                    <th>器材编号</th>
+                    <th>借出时间</th>
+                    <th>状态</th>
+                    <th>归还时间</th>
+                </tr>
+                {% for log in logs|reverse %}
+                <tr>
+                    <td>{{ log[0] }}</td>
+                    <td>{{ log[1] }}</td>
+                    <td>{{ log[2] }}</td>
+                    <td>{{ log[3] }}</td>
+                    {% if log[4] == 1 %}
+                    <td>已归还</td>
+                    {% else %}
+                    <td>未归还</td>
+                    {% endif %}
+                    <td>{{ log[5] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <footer>
+            <p>版权所有©</p>
+        </footer>
+    </div>
+    </div>
+</body>
+
+</html>
